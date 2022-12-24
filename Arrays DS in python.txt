@@ -1,0 +1,80 @@
+#Creating 1D array
+
+print("How many elements to store inside the array",end="")
+num=input()
+arr=[]
+print("\nEnter",num,"Element:",end="")
+num=int(num)
+for i in range(num):
+    element=input()
+    arr.append(element)
+print("\nThe array elements are")
+for i in range(num):
+    print(arr[i],end="")
+
+
+
+#Creating 2D array
+
+r_num= int(input("Input number of rows: "))
+c_num= int(input("Input number of columns: "))
+twod_arr=[[0 for col in range(c_num)] for row in range(r_num)]
+
+for row in range(r_num):
+          for col in range(c_num):
+              twod_arr[row][col]=row*col
+print(twod_arr)
+
+
+#deleting elements in array
+
+print(end="Enter the size of array:")
+tot=int(input())
+arr=[]
+print(end="Enter " +str(tot)+ "Elements: ")
+for i in range(tot):
+    arr.append(input())
+print(end="\nEnter the value to delete: ")
+val=input()
+if val in arr:
+    arr.remove(val)
+    print("\nThe new array is:")
+    for i in range(tot-1):
+        print(end=arr[i]+" ")
+else:
+    print("\nElement doesnt exist in the list!")
+
+
+#sorting elements in array
+
+arr=[10,17,22,11,27]
+temp=0;
+
+print("Elements of original array: ");
+for i in range(0,len(arr)):
+    print(arr[i],end=" ");
+for i in range(0,len(arr)):
+    for j in range(i+1,len(arr)):
+        if(arr[i]>arr[j]):
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+print();
+print("Elements of arrays sorted in ascending order: ");
+for i in range(0,len(arr)):
+    print(arr[i],end=" ")
+
+
+
+#searching the array
+
+import array
+arr=array.array('i',[1,2,3,1,2,5])
+print("The new created array is: ",end="")
+for i in range(0,6):
+    print(arr[i],end="")
+print("\r")
+print("The index of 1st occurance of 2 is: ",end="")
+print(arr.index(2))
+print("The index of 1st occurance of 5 is: ",end="")
+print(arr.index(5))
